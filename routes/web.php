@@ -18,10 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/home','adminController@index');
-Route::get('/{anypath}','adminController@index')->where('path','.*');
+// Route::get('/{anypath}','adminController@index')->where('path','.*');
 
 Route::get('/post','PostController@all_post');
 
 //category
 
 Route::post('/add-category','CategoryController@add_category');
+Route::get('/category','CategoryController@all_category');
+Route::get('/editcategory/{id}','CategoryController@edit_category');
+Route::post('/update-category/{id}','CategoryController@update_category');
+Route::get('/category/{id}','CategoryController@delete_category');
+

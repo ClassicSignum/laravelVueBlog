@@ -4,12 +4,39 @@ require('./bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import {routes} from './routes/routes';
+import filter from './filter/filter';
 
 import { Form, HasError, AlertError } from 'vform'
  
 window.Form=Form;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
+
+//sweet alert
+import Swal from 'sweetalert2'
+window.Swal=Swal;
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+  })
+
+
+  window.toast=Toast;
+  
+  //vuex 
+  import Vuex from 'vuex';
+  Vue.use(Vuex);
+
+  //
+
+  //store
+import storeData from './store/index';
+const store = new Vuex.Store(
+    storeData
+)
+  //
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -43,11 +70,12 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes,
-    mode:'history',
+    mode:'hash',
 })
  
 
 const app = new Vue({
     el: '#app',
-     router
+     router,
+     store
 });

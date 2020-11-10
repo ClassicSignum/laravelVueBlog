@@ -24,17 +24,19 @@
                                    <tr>
                                        <th>Serial no</th>
                                        <th>Category name</th>
+                                       <th>Date</th>
                                        <th>Actions</th>
                                        
                                    </tr>
                                </thead>
                                <tbody>
-                                   <tr>
-                                       <td>1</td>
-                                       <td>1</td>
+                                   <tr :key="category.id" v-for="(category,index) in getAllCategory">
+                                       <td>{{index+1}}</td>
+                                       <td>{{category.cat_name}}</td>
+                                       <td>{{category.created_at|timeformat}}</td>
                                        <td>
-                                           <a class="btn btn-secondary" href="">Edit</a>
-                                           <a class="btn btn-secondary" href="">Delete</a>
+                                           <router-link class="btn btn-secondary" :to="`/edit-category/${category.id}`" >Edit</router-link>
+                                           <a class="btn btn-secondary" href="" v-on:click.prevent="deleteCategory(category.id)">Delete</a>
                                        </td>
                                      
                                    </tr>
@@ -57,7 +59,54 @@
 <script>
 export default {
 
-    name:"List"
+    name:"List",
+    mounted(){
+        return this.$store.dispatch("actgetAllCategory");
+
+    },
+    computed:{
+        getAllCategory(){
+
+            return this.$store.getters.getCategory
+        }
+    },
+    methods:{
+
+        deleteCategory(id){
+            //
+            Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Deleted!',
+      'This category has been deleted.',
+      'success'
+    )
+     axios.get("/category/"+id)
+                 .then((res)=>{
+                 this.$store.dispatch("actgetAllCategory")
+
+                    //  toast.fire({
+                    //     icon: 'success',
+                    //     title: 'Category Added Successfully'
+                    // })
+        })
+                 .catch()
+                 //
+  }
+})
+            //
+           
+        },
+
+    }
     
 }
 </script>
