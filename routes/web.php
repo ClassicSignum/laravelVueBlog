@@ -21,6 +21,10 @@ Route::get('/home','adminController@index');
 // Route::get('/{anypath}','adminController@index')->where('path','.*');
 
 Route::get('/post','PostController@all_post');
+Route::get('/editpost/{id}','PostController@edit_post');
+Route::get('/post/{id}','PostController@delete_post');
+Route::post('/add-post','PostController@add_post');
+Route::post('/update-post/{id}','PostController@update_post');
 
 //category
 
