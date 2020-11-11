@@ -7,6 +7,9 @@ import EditCategory from '../components/admin/category/Edit.vue';
 import PostList from '../components/admin/post/List.vue';
 import AddPost from '../components/admin/post/New.vue';
 import EditPost from '../components/admin/post/Edit.vue';
+//frontend
+import PublicHome from '../components/public/PublicHome.vue';
+import BlogPost from '../components/public/blog/BlogPost.vue';
 
 
 export const routes = [
@@ -39,6 +42,15 @@ export const routes = [
     {
         path:"/edit-post/:id",
         component:EditPost
+    },
+    //front-end
+    {
+        path:"/",
+        component:PublicHome
+    },
+    {
+        path:"/blog",
+        component:BlogPost
     },
 
 ]

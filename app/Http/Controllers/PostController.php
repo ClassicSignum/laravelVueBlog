@@ -24,7 +24,7 @@ class PostController extends Controller
     {
         $this->validate($req,[
             'title'=>'required|min:3|max:30',
-            'description'=>'required|min:10|max:200',
+            'description'=>'required|min:10|max:900',
             
             ]);
             
@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $this->validate($req,[
             'title'=>'required|min:3|max:30',
-            'description'=>'required|min:10|max:200',
+            'description'=>'required|min:10|max:900',
             
             ]);
             

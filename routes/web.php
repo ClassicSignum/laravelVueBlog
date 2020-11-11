@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.index');
 });
 
 Route::get('/home','adminController@index');
@@ -34,3 +34,5 @@ Route::get('/editcategory/{id}','CategoryController@edit_category');
 Route::post('/update-category/{id}','CategoryController@update_category');
 Route::get('/category/{id}','CategoryController@delete_category');
 
+//blog
+Route::get('/blogpost','BlogController@all_blog');
