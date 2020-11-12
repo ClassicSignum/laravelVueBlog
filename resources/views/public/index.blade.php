@@ -10,7 +10,7 @@
   <meta name="csrf_token" content="{{csrf_token()}}" />
 
   <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet"> -->
   <link href="assets/public/css/bootstrap.css" rel="stylesheet" />
   <link href="assets/public/css/bootstrap-responsive.css" rel="stylesheet" />
   <link href="assets/public/css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 
   <div id="wrapper">
     <!-- toggle top area -->
-    <div class="hidden-top">
+    <div class="hidden-top">]
       <div class="hidden-top-inner container">
         <div class="row">
           <div class="span12">
@@ -336,7 +336,7 @@
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="assets/public/js/jquery.js"></script>
-  <script src="assets/public/js/jquery.easing.1.3.js"></script>
+  <!-- <script src="assets/public/js/jquery.easing.1.3.js"></script> -->
   <script src="assets/public/js/bootstrap.js"></script>
   <script src="assets/public/js/jcarousel/jquery.jcarousel.min.js"></script>
   <script src="assets/public/js/jquery.fancybox.pack.js"></script>

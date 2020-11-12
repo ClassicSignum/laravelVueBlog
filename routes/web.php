@@ -36,3 +36,7 @@ Route::get('/category/{id}','CategoryController@delete_category');
 
 //blog
 Route::get('/blogpost','BlogController@all_blog');
+Route::get('/blogpost/{id}','BlogController@single_blog');
+Route::get('/categories','BlogController@all_categories');
+Route::get('/categories/{id}','BlogController@blogs_by_category');
+Route::get('/search/{keyword}','BlogController@search_post');

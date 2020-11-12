@@ -10,6 +10,7 @@ import EditPost from '../components/admin/post/Edit.vue';
 //frontend
 import PublicHome from '../components/public/PublicHome.vue';
 import BlogPost from '../components/public/blog/BlogPost.vue';
+import SingleBlog from '../components/public/blog/SingleBlog.vue';
 
 
 export const routes = [
@@ -43,7 +44,7 @@ export const routes = [
         path:"/edit-post/:id",
         component:EditPost
     },
-    //front-end
+    //blog
     {
         path:"/",
         component:PublicHome
@@ -52,5 +53,15 @@ export const routes = [
         path:"/blog",
         component:BlogPost
     },
+    {
+        path:"/blog/:id",
+        component:SingleBlog
+    },
+    //blogsidebar
+        {
+            path:"/category/:id",
+            component:BlogPost
+        },
+
 
 ]
